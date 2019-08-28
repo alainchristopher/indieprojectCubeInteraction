@@ -1,0 +1,77 @@
+@font-face {
+    font-family: Dinamit Bold;
+    src: url(dinamit_bold.ttf);
+}
+@font-face {
+    font-family: Gt Cinetype Mono;
+    src: url(gt-cinetype-mono.otf);
+}
+
+img{
+width:175px;
+height:175px;    
+}
+
+body{
+ background-color:black;  
+ font-family: Dinamit Bold;
+ font-size: 55px; 
+ color:white;
+}
+
+.container {
+    /* height: 90vh; */
+    margin: 0px;
+    margin-left: -100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+.box-scene {
+    -webkit-perspective: 700;
+    width: 400px;
+    height: 175px;
+    margin: auto;
+
+    z-index: 999;
+}
+.box-scene:hover .box {
+    -webkit-transform: rotateY(-90deg);
+}
+.box {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    
+    -webkit-transform-style: preserve-3d;
+    
+    -webkit-transition: all 0.4s ease-out;
+    -webkit-transform-origin: 90px 90px -90px;
+    
+    /* float: left; */
+    margin: 30px auto;
+    
+    
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: visible; 
+    
+    -webkit-transform-origin: 0 0;
+}
+.front {
+    -webkit-transform: rotateY(0deg);
+    z-index: 2;
+    background: black;
+}
+.side {
+    background: black;
+    -webkit-transform: rotateY(90deg);
+    z-index: 1;
+    left: 180px;
+}
+
